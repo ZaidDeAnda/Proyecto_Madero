@@ -43,21 +43,28 @@
     </div>
   </nav>
 
-  <header class="bg-primary text-white">
-    <div class="container text-center">
-      <h1>Bienvenido al proyecto</h1>
+  <section class= "bg-primary" id="about">
+    {% if login_error %}
+    <div class="alert alert-dark alert-dismissible fade show container" role="alert">
+      <strong>¡On, no! 🚫</strong><br> Hay un error en tus credenciales.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </header>
-
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Cuadro vacío</h2>
-        </div>
+    {% endif %}
+    <h3 class="login-heading mb-4 container text-center">Para entrar al panel de control, Introduzca sus credenciales</h3>
+    <form method="post">
+      <div class="form-label-group container text-center col-md-2">
+        <input name="username" type="text" id="inputUser" class="form-control" placeholder="Usuario" required autofocus>
+        <label for="inputUser">Código de establecimiento</label>
       </div>
-    </div>
-  </section>
+      <div class="form-label-group container text-center col-md-2">
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <label for="inputPassword">Contraseña</label>
+      </div>
+      <button class="btn btn-lg btn-dark btn-block btn-login text-uppercase font-weight-bold mb-2 container text-center col-md-2" type="submit">Acceder</button>
+      </form>
+    </section>
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">

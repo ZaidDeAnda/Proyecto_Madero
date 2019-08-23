@@ -50,7 +50,7 @@ def login():
             return render_template('tables.html', users=registered)
         else:
             login_error = True
-    return render_template('login.html', login_error=login_error)
+    return render_template('admin.html', login_error=login_error)
 
 
 @app.errorhandler(404)
