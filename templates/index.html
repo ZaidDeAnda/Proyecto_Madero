@@ -43,20 +43,34 @@
     </div>
   </nav>
 
-  <header class="bg-primary text-white">
-    <div class="container text-center">
-      <h1>Bienvenido al proyecto</h1>
-    </div>
-  </header>
+  <section id="tabla">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" method="get">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in users %}
+          <tr>
+            <td>{{ item['item'] }}</td>
+            <td>{{ item['precio'] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
 
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Cuadro vacío</h2>
-        </div>
+  <section id="objetos">
+    <form class="" method="post">
+      <div class="form-group form-inline d-flex col-md-4">
+        <input name="item" type="text" class="col-md-7 form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputName" placeholder="Item" required>
+        <input name="precio" type="number" class="col-md-5 form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Precio" required>
       </div>
-    </div>
+      <button id="añadir" type="submit" class="btn btn-primary mx-auto">añadir</button>
+      <button id="reiniciar" type="submit" class="btn btn-primary mx-auto">reiniciar</button>
+    </form>
   </section>
   <!-- Footer -->
   <footer class="py-5 bg-dark">
