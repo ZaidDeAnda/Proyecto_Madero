@@ -44,7 +44,7 @@
   </nav>
 
   <section id="tabla">
-    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" method="get">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" method="post">
       <thead>
         <tr>
           <th>Item</th>
@@ -52,10 +52,10 @@
         </tr>
       </thead>
       <tbody>
-        {% for item in users %}
+        {% for item in list_temporal %}
           <tr>
-            <td>{{ item['item'] }}</td>
-            <td>{{ item['precio'] }}</td>
+            <td>{{ list_temporal[item][0] }}</td>
+            <td>{{ list_temporal[item][1] }}</td>
           </tr>
         {% endfor %}
       </tbody>
@@ -65,8 +65,8 @@
   <section id="objetos">
     <form class="" method="post">
       <div class="form-group form-inline d-flex col-md-4">
-        <input name="item" type="text" class="col-md-7 form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputName" placeholder="Item" required>
-        <input name="precio" type="number" class="col-md-5 form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Precio" required>
+        <input name="item" type="text" class="col-md-7 form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputName" placeholder="Item">
+        <input name="precio" type="number" class="col-md-5 form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Precio">
       </div>
       <button id="añadir" type="submit" class="btn btn-primary mx-auto">añadir</button>
       <button id="reiniciar" type="submit" class="btn btn-primary mx-auto">reiniciar</button>
