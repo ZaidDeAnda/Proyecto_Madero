@@ -4,9 +4,9 @@ from wtforms import IntegerField
 from wtforms.validators import DataRequired
 
 
-class EmailForm(Form):
-    name = StringField('name', validators=[DataRequired()])
-    email = StringField('email', validators=[DataRequired()])
+class BuyForm(Form):
+    item = StringField('item', validators=[DataRequired()])
+    precio = IntegerField('precio', validators=[DataRequired()])
 
 
 class LoginForm(Form):
