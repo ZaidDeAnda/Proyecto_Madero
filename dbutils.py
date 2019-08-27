@@ -18,8 +18,6 @@ def db_insert_user(collection, user):
 def db_find_all(collection, query={}):
     return collection.find(query)
 
-def db_delete_temp(collection, query={}):
-	collection.delete_many(query)
 
 if __name__ == '__main__':
     print("MongoClient imported successfully!")
